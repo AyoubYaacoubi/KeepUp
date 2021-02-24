@@ -1,0 +1,9 @@
+.wrapper{
+    padding-left: 36px;
+    padding-right: 36px;
+
+    @mixin atSmall{
+        padding-left: 65px;
+        padding-right: 65px;
+    }
+}
