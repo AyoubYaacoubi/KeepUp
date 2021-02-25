@@ -1,18 +1,38 @@
 .header{
     background-color: $mainBlack;
     color: white;
-    max-height: 60px;
+    height: 60px;
     width: 100%;
     position: fixed;
+    z-index: 2;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     border-bottom: 5px solid $strgPurple;
     box-shadow: 0px 0px 10px -2px #070707;
+/* mobile nav-bar: */
+    &__mob-nav{
+        display: block;
+    }
 
+    &__navbar{
+        display: none;
+    }
+
+    @mixin atSmall{
+        &__mob-nav{
+            display: none;
+        }
+        &__navbar{
+            display: flex;
+            max-height: 60px;
+            align-items: end;
+        }
+    }
+/* logo and the links: */
     &__logo{
         background-color: $ltPurple;
         position: fixed;
-        left: 20px;
+        right: 20px;
         top: 0;
         height: 90px;
         border-radius: 0% 0% 50% 50%;
@@ -29,22 +49,22 @@
         padding: 0;
         margin: 0;
         list-style: none;
-        display: flex;
     }
 
     &__link{
         display: flex;
         justify-content: center;
         align-items: center;
+        float: left;
         font-size: 1.1rem;
         font-weight: 400;
         font-style: italic;
-        margin-left: 0.1rem;
+        background-color: $ltPurple;
+        width: 90px;
         padding: 0.7rem 0.5rem;
         border: 1px solid $strgPurple;
         border-radius: 9px 9px 0px 0px;
-        background-color: $ltPurple;
-        width: 90px;
+        margin-left: 0.1rem;
         transition: all 250ms ease-in-out;
 
         a{
