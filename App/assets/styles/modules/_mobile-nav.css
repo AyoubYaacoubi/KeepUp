@@ -5,36 +5,47 @@
         position: fixed;
         left: 50%;
         top: 50%;
-        /* none active state */
         transform: translate(-50%, -50%) scale(0);
         opacity: 0;
         visibility: hidden;
-        /*  */
         padding: 12rem 11.5rem;
         border-radius: 50%;
+        &--active{
+            visibility: visible;
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
 
     }
 
     &__mob-links{
-        border-top: 5px solid $strgPurple;
-        border-bottom: 5px solid $strgPurple;
-        width: 300px;
+        width: 250px;
     }
 
     &__mob-link{
-        font-size: 1.6rem;
-        padding: 10px 0px;
+        font-size: 1.3rem;
+        padding: 7px 0px;
         text-align: center;
-        background-color: $ltPurple;
-        border-bottom: 2px solid $strgPurple;
-
-        &:last-child{
-            border: none;
-        }
 
         a{
             text-decoration: none;
-            color: $strgPurple;
+            color: #070707;
+            font-weight: 700;
+
+            &::after{
+                content: "";
+                margin: 0 auto;
+                width: 0;
+                height: 3px;
+                border-radius: 3px;
+                display: block;
+                background-color: $strgPurple;
+                transform-origin: right;
+            }
+
+            &:hover &::after{
+                width: 100px;
+            }
         }
     }
 

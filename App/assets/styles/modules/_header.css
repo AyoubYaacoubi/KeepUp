@@ -1,14 +1,19 @@
 .header{
     background-color: $mainBlack;
     color: white;
-    height: 60px;
+    max-height: 60px;
     width: 100%;
     position: fixed;
     z-index: 2;
     display: flex;
     flex-direction: row;
-    border-bottom: 5px solid $strgPurple;
+    border-bottom: none;
     box-shadow: 0px 0px 10px -2px #070707;
+    @mixin atMedium{
+        border-bottom: 5px solid $strgPurple;
+        
+    }
+
 /* mobile nav-bar: */
     &__mob-nav{
         display: block;
@@ -18,27 +23,33 @@
         display: none;
     }
 
-    @mixin atSmall{
+    @mixin atMedium{
         &__mob-nav{
             display: none;
         }
         &__navbar{
             display: flex;
             max-height: 60px;
-            align-items: end;
+            align-items: flex-end;
         }
     }
 /* logo and the links: */
     &__logo{
         background-color: $ltPurple;
         position: fixed;
-        right: 20px;
+        right: 50%;
+        transform: translateX(50%);
         top: 0;
         height: 90px;
         border-radius: 0% 0% 50% 50%;
         box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
         border: 1px solid #070707;
         
+        @mixin atMedium{
+            right: 65px;
+            transform: translateX(0);
+        }
+
         h2{
             margin-top: 0.9rem;
             padding: 0.1rem;
@@ -48,14 +59,12 @@
     &__links{
         padding: 0;
         margin: 0;
-        list-style: none;
+        @mixin clearFix;
     }
 
     &__link{
-        display: flex;
-        justify-content: center;
-        align-items: center;
         float: left;
+        list-style: none;
         font-size: 1.1rem;
         font-weight: 400;
         font-style: italic;
@@ -70,6 +79,8 @@
         a{
             color: white;
             text-decoration: none;
+            display: block;
+            text-align: center;
         }
 
         &:hover{
