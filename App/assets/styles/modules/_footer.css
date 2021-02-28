@@ -1,26 +1,27 @@
 .footer{
     background-color: #070707;
-    position: fixed;
-    bottom: 0px;
+    position: absolute;
+    bottom: 0;
     width: 100%;
+    
 
     &__links{
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template: 60px 60px / 1fr 1fr;
+        @mixin atSmall{
+            grid-template: 60px / 1fr 1fr 1fr 1fr;
+        }
+        grid-gap: 10px;
         align-items: center;
     }
     
     &__link{
         padding: 0.2rem;
-
-        &:nth-child(1),
-        &:nth-child(2),
+        text-align: center;
+        
         &:nth-child(3){
-            width: 20%;
-        }
-        &:nth-child(4){
-            width: 40%;
-            text-align: right;
+            font-style: italic;
+            font-size: 0.5rem;
         }
 
         a{

@@ -10,6 +10,7 @@
         visibility: hidden;
         padding: 12rem 11.5rem;
         border-radius: 50%;
+        
         &--active{
             visibility: visible;
             opacity: 1;
