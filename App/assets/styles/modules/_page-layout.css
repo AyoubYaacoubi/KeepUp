@@ -1,0 +1,12 @@
+#page-content{
+    display: grid;
+    grid-template: minmax(90vh, auto) 150px/ 100%;
+    @mixin atSmall{
+        grid-template: minmax(90vh, auto) 60px/ 100%;
+    }
+}
+
+#main-cont{
+    grid-row: 0 1;
+    padding-top: 60px;
+}
