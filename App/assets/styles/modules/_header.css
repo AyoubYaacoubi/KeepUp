@@ -11,28 +11,32 @@
     box-shadow: 0px 0px 10px -2px #070707;
     @mixin atMedium{
         border-bottom: 5px solid $strgPurple;
-        
-    }
-
-/* mobile nav-bar: */
-    &__mob-nav{
-        display: block;
     }
 
     &__navbar{
-        display: none;
+        position: absolute;
+        width: 80vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.77);
+        left: -100%;
+        top: 0;
+        padding-top: 60px;
+        transition: 300ms all ease-out;
+        
+        &--active{
+            left: 0;
+        }
+
+        @mixin atMedium{
+            position: relative;
+            left: auto;
+            width: fit-content;
+            height: 100%;
+            padding: 0;
+            background-color: transparent;
+        }
     }
 
-    @mixin atMedium{
-        &__mob-nav{
-            display: none;
-        }
-        &__navbar{
-            display: flex;
-            max-height: 60px;
-            align-items: flex-end;
-        }
-    }
 /* logo and the links: */
     &__logo{
         background-color: $ltPurple;
@@ -67,34 +71,58 @@
     &__links{
         padding: 0;
         margin: 0;
+        width: 100%; 
         @mixin clearFix;
+
+        @mixin atMedium{
+            width: fit-content;
+        }
     }
 
     &__link{
-        float: left;
         list-style: none;
         font-size: 1.1rem;
         font-weight: 400;
         font-style: italic;
-        background-color: $ltPurple;
-        width: 90px;
-        padding: 0.7rem 0.5rem;
-        border: 1px solid $strgPurple;
-        border-radius: 9px 9px 0px 0px;
-        margin-left: 0.1rem;
+        width: 100%;
+        padding: 0.3rem 0.3rem;
+        border-left: 4px solid $strgPurple;
+        border-bottom: 2px solid $strgPurple;
+        margin: 0.5rem 0.1rem 0rem 0.1rem;
         transition: all 250ms ease-in-out;
 
         a{
-            color: white;
+            color: $strgPurple;
             text-decoration: none;
             display: block;
             text-align: center;
+
+            &:hover{
+                color: white;
+            }
+
+            @mixin atMedium{
+                color: white;
+            }
         }
 
         &:hover{
             background-color: $strgPurple;
             border-color: $ltPurple;
             border-bottom-color: $strgPurple;
+
+        }
+       
+
+        @mixin atMedium{
+            float: left;
+            margin: 0.5rem 0.1rem 0rem 0.1rem;
+            border-radius: 9px 9px 0px 0px;
+            background-color: $ltPurple;
+            border: 1px solid $strgPurple;
+            padding: 0.7rem 0.5rem;
+            width: 90px;
+            
         }
     }
 
