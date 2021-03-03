@@ -5,6 +5,6 @@
 @import './modules/_header.css';
 @import './modules/_footer.css';
 @import './modules/_main.css';
-@import './modules/_mobile-nav.css';
 @import './modules/_burger-menu.css';
 @import './modules/_page-layout.css';
+@import './accordion/_accordion.css'
